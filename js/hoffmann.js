@@ -127,14 +127,6 @@ function initLeafletControls() {
 				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 			});
 
-		var dtkLayer = L.tileLayer.wms(
-			"https://www.wms.nrw.de/geobasis/wms_nw_dtk?",
-			{
-				format: "image/png",
-				layers: "nw_dtk_col",
-				attribution: "Map data &copy; <a href='https://www.bezreg-koeln.nrw.de/brk_internet/geobasis/'>Geobasis NRW</a>"
-			});
-
 		// add one layer to map
 		topPlusLayer.addTo(hoffmannMap);
 
@@ -156,8 +148,7 @@ function initLeafletControls() {
 		var baseLayers =
 		{
 			"Top Plus": topPlusLayer,
-			"Open-Street-Map": osmLayer,
-			"NRW DTK": dtkLayer
+			"Open-Street-Map": osmLayer
 		};
 
 		// initilialize overlays as empty set
