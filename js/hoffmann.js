@@ -127,6 +127,11 @@ function initLeafletControls() {
 				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 			});
 
+		var osmLayer_tiled = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		        maxZoom: 19,
+		        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		    });
+
 		// add one layer to map
 		topPlusLayer.addTo(hoffmannMap);
 
@@ -148,7 +153,8 @@ function initLeafletControls() {
 		var baseLayers =
 		{
 			"Top Plus": topPlusLayer,
-			"Open-Street-Map": osmLayer
+			"Open-Street Map - WMS": osmLayer,
+			"Open Street Map - Kacheln": osmLayer_tiled
 		};
 
 		// initilialize overlays as empty set
